@@ -2,6 +2,13 @@
 
 `cats` is a fork of the R package `CATS` developed by Anders Albrechtsen <<aalbrechtsen@bio.ku.dk>> for power estimation in two-stage genome-wide association designs.
 
+## Installation
+
+```r
+# install.packages("devtools")
+devtools::install_github("nanxstats/cats")
+```
+
 ## Method
 
 The method for power analysis implemented in `CATS` is based on Skol et al. 2006, but more generalized so that the ratio between cases and controls may vary between stages. The allele frequencies, disease prevalence, and relative risk can also vary.
