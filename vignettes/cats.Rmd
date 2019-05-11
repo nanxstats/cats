@@ -1,5 +1,5 @@
 ---
-title: "cats: Joint Power Analysis for Non-Symmetric Two-Stage Case-Control Designs"
+title: "Joint Power Analysis for Non-Symmetric Two-Stage Case-Control Designs"
 date: "`r Sys.Date()`"
 output:
   rmarkdown::html_vignette:
@@ -7,7 +7,7 @@ output:
     number_sections: true
 vignette: >
   %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteIndexEntry{cats: Joint Power Analysis for Non-Symmetric Two-Stage Case-Control Designs}
+  %\VignetteIndexEntry{Joint Power Analysis for Non-Symmetric Two-Stage Case-Control Designs}
 ---
 
 ```{r, echo=FALSE}

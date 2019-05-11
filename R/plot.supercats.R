@@ -1,4 +1,4 @@
-#' plot supercats
+#' Plot supercats
 #'
 #' @param x description
 #' @param type description

@@ -2,7 +2,7 @@
 % Please edit documentation in R/plot.supercats.R
 \name{plot.supercats}
 \alias{plot.supercats}
-\title{plot supercats}
+\title{Plot supercats}
 \usage{
 \method{plot}{supercats}(x, type = "Joint", file = "power.pdf",
   col = NULL, main = paste("POWER N=", x$ncases, ":", x$ncontrols, ",",
@@ -22,5 +22,5 @@
 \item{...}{description}
 }
 \description{
-plot supercats
+Plot supercats
 }
