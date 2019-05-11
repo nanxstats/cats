@@ -1,0 +1,22 @@
+Package: cats
+Title: Joint Power Analysis for Non-Symmetric Two-Stage Case-Control Designs
+    for SNP Data
+Description: Joint power analysis for two-stage designs for SNP data.
+    Generalized so that the ratios between the cases and controls,
+    the allele frequencies and the relative risk can vary between stages.
+Version: 1.0.2
+Date: 2019-05-10
+Authors@R: c(
+    person("Anders", "Albrechtsen", email = "aalbrechtsen@bio.ku.dk", role = c("aut", "cre")),
+    person("Nan", "Xiao", email = "me@nanx.me", role = c("ctb")))
+Maintainer: Nan Xiao <me@nanx.me>
+URL: https://nanx.me/cats/, https://github.com/nanxstats/cats
+BugReports: https://github.com/nanxstats/cats/issues
+License: GPL-3 | file LICENSE
+NeedsCompilation: yes
+Encoding: UTF-8
+VignetteBuilder: knitr
+Suggests:
+    knitr,
+    rmarkdown
+RoxygenNote: 6.1.1

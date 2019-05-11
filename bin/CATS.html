@@ -1,0 +1,569 @@
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>CATS - software</title>
+	<link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-CATS rootpage-CATS skin-vector action-view">
+	<div id="mw-page-base" class="noprint"></div>
+	<div id="mw-head-base" class="noprint"></div>
+	<div id="content" class="mw-body" role="main">
+		<a id="top"></a>
+
+		<div class="mw-indicators">
+		</div>
+		<h1 id="firstHeading" class="firstHeading" lang="en">CATS</h1>
+		<div id="bodyContent" class="mw-body-content">
+			<div id="siteSub">From software</div>
+			<div id="contentSub"></div>
+			<div id="jump-to-nav" class="mw-jump">
+				Jump to: <a href="http://www.popgen.dk/software/index.php/CATS#mw-head">navigation</a>, <a
+					href="http://www.popgen.dk/software/index.php/CATS#p-search">search</a>
+			</div>
+			<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+				<div id="toc" class="toc">
+					<div id="toctitle">
+						<h2>Contents</h2>
+					</div>
+					<ul>
+						<li class="toclevel-1 tocsection-1"><a
+								href="http://www.popgen.dk/software/index.php/CATS#joint_power_of_a_non-symmetric_two_stage_GWA_design"><span
+									class="tocnumber">1</span> <span class="toctext">joint power of a non-symmetric two
+									stage GWA design</span></a></li>
+						<li class="toclevel-1 tocsection-2"><a
+								href="http://www.popgen.dk/software/index.php/CATS#cite"><span
+									class="tocnumber">2</span> <span class="toctext">cite</span></a></li>
+						<li class="toclevel-1 tocsection-3"><a
+								href="http://www.popgen.dk/software/index.php/CATS#Download_and_installation"><span
+									class="tocnumber">3</span> <span class="toctext">Download and
+									installation</span></a></li>
+						<li class="toclevel-1 tocsection-4"><a
+								href="http://www.popgen.dk/software/index.php/CATS#run_in_R"><span
+									class="tocnumber">4</span> <span class="toctext">run in R</span></a></li>
+						<li class="toclevel-1 tocsection-5"><a
+								href="http://www.popgen.dk/software/index.php/CATS#plot_examples"><span
+									class="tocnumber">5</span> <span class="toctext">plot examples</span></a>
+							<ul>
+								<li class="toclevel-2 tocsection-6"><a
+										href="http://www.popgen.dk/software/index.php/CATS#Which_design_is_better"><span
+											class="tocnumber">5.1</span> <span class="toctext">Which design is
+											better</span></a></li>
+								<li class="toclevel-2 tocsection-7"><a
+										href="http://www.popgen.dk/software/index.php/CATS#Number_of_SNPs_for_replication"><span
+											class="tocnumber">5.2</span> <span class="toctext">Number of SNPs for
+											replication</span></a></li>
+								<li class="toclevel-2 tocsection-8"><a
+										href="http://www.popgen.dk/software/index.php/CATS#heatmap_of_power"><span
+											class="tocnumber">5.3</span> <span class="toctext">heatmap of
+											power</span></a></li>
+								<li class="toclevel-2 tocsection-9"><a
+										href="http://www.popgen.dk/software/index.php/CATS#design_and_MAF"><span
+											class="tocnumber">5.4</span> <span class="toctext">design and MAF</span></a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+
+				<h1><span class="mw-headline" id="joint_power_of_a_non-symmetric_two_stage_GWA_design">joint power of a
+						non-symmetric two stage GWA design</span></h1>
+				<p>R package for power estimation for a two-stage genome-wide association design. This is a modification
+					of the code from Skol et al 2006, nat genet. so that the relative risk, case-control ratios and
+					allele frequencies are allowed to vary between stages.
+				</p>
+				<h1><span class="mw-headline" id="cite">cite</span></h1>
+				<pre> Skol, AD, Scott, LJ, Abecasis, GR, Boehnke, M (2006). Joint analysis is more efficient than replication-based analysis for two-stage genome-wide association studies. Nat. Genet., 38, 2:209-13.
+</pre>
+				<h1><span class="mw-headline" id="Download_and_installation">Download and installation</span></h1>
+				<p>This package only seems to work on linux.
+				</p>
+				<p><br>
+					<a rel="nofollow" class="external text"
+						href="http://popgen.dk/software/download/CATS/CATS_1.02.tar.gz">Software version 1.02</a>
+				</p>
+				<p><a rel="nofollow" class="external text"
+						href="http://popgen.dk/software/download/CATS/CATS-manual.pdf">manual</a>
+				</p>
+				<p>install R package from command line
+				</p>
+				<pre>wget http://popgen.dk/software/download/CATS/CATS_1.02.tar.gz
+R CMD INSTALL CATS_1.02.tar.gz
+</pre>
+				<h1><span class="mw-headline" id="run_in_R">run in R</span></h1>
+				<pre>library(CATS)
+cats(freq=0.2,ncases=500,ncases2=500,ncontrols=1000,ncontrols2=1000,risk=1.5,multiplicative=1)
+
+
+Expected Power is;
+                   For a one-stage study = 0.94
+      For first stage in two-stage study = 0.972
+For second stage in replication analysis = 0.784
+    For second stage in a joint analysis = 0.929
+                                      pi = 0.5
+</pre>
+				<h1><span class="mw-headline" id="plot_examples">plot examples</span></h1>
+				<h4><span class="mw-headline" id="Which_design_is_better">Which design is better</span></h4>
+				<div class="thumb tright">
+					<div class="thumbinner" style="width:302px;"><a href="assets/CatsFig1.png" class="image"><img
+								alt="CatsFig1.png" src="assets/CatsFig1.png" width="300" height="300"
+								class="thumbimage"></a>
+						<div class="thumbcaption">
+							<div class="magnify"><a href="assets/CatsFig1.png" class="internal" title="Enlarge"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<pre>library(CATS)
+rr&lt;-seq(1,2,by=0.05)
+maf&lt;-c(0.05,0.1,0.2,0.5)
+c2&lt;-curve.cats(rr,maf,ncases=600,ncontrols=600,ncases2=600,
+ncontrols2=600,alpha=0.000001,prevalence=0.01);
+
+plot(c2,type="One",main="power2",ylab="Power",xlab="RR",file=NULL,col=1:4)
+lines.cats(c2,type="Replication",lty=3)
+lines.cats(c2,type="Joint",lty=2)
+lines.cats(c2,type="First",lty=4)
+legend("left",c("One stage","Joint","Relication","First Stage"),lty=1:4,bty="n")
+</pre>
+				<h4><span class="mw-headline" id="Number_of_SNPs_for_replication">Number of SNPs for replication</span>
+				</h4>
+				<div class="thumb tright">
+					<div class="thumbinner" style="width:302px;"><a href="assets/CatsFig2.png" class="image"><img
+								alt="CatsFig2.png" src="assets/CatsFig2.png" width="300" height="300"
+								class="thumbimage"></a>
+						<div class="thumbcaption">
+							<div class="magnify"><a href="assets/CatsFig2.png" class="internal" title="Enlarge"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<pre>library(CATS)
+     power.J96&lt;-c()
+     power.J1536&lt;-c()
+     RR&lt;-seq(1.1,1.5,by=0.025)
+
+
+     maf=c(5,10,20,50)/100
+
+for(tal2 in 1:length(maf)){
+     J1&lt;-c()
+     J2&lt;-c()
+     for(tal in 1:length(RR)){
+       temp&lt;-cats(freq=maf[tal2],ncases=1500,ncontrols=1500,ncases2=2000,
+ncontrols2=2000,risk=RR[tal],pimarkers = 96/300000,alpha=0.05/300000)
+       J1[tal]&lt;-temp$P.joint
+       temp&lt;-cats(freq=maf[tal2],ncases=1500,ncontrols=1500,ncases2=2000,
+ncontrols2=2000,risk=RR[tal],pimarkers = 1536/300000,alpha=0.05/300000)
+       J2[tal]&lt;-temp$P.joint
+     }
+  power.J96&lt;-cbind(power.J96,J1)
+  power.J1536&lt;-cbind(power.J1536,J2)
+
+}
+col=1:length(maf)
+
+plot(RR,power.J1536[,1],type=type,lwd=2,ylab="Power",main="Multiplicative model,
+ 1500:1500, 2000:2000",col=col[1],ylim=0:1)
+for(tal2 in 2:length(maf)){
+     lines(RR,power.J1536[,tal2],lwd=2,col=col[tal2],type=type)
+}
+for(tal2 in 1:length(maf)){
+     lines(RR,power.J96[,tal2],lwd=2,col=col[tal2],type=type,lty=2)
+}
+      legend("bottomright",c(paste("MAF=",c(maf),", rep=1536"),paste("MAF=",c(maf),", rep=96")),col=col,lwd=2,bty="n",lty=c(rep(1,length(maf)),rep(2,length(maf))))
+</pre>
+				<p><br>
+				</p>
+				<h4><span class="mw-headline" id="heatmap_of_power">heatmap of power</span></h4>
+				<div class="thumb tright">
+					<div class="thumbinner" style="width:302px;"><a href="assets/CatsFig3.png" class="image"><img
+								alt="CatsFig3.png" src="assets/CatsFig3.png" width="300" height="300"
+								class="thumbimage"></a>
+						<div class="thumbcaption">
+							<div class="magnify"><a href="assets/CatsFig3.png" class="internal" title="Enlarge"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<pre>library(CATS)
+rr&lt;-seq(1,2,by=0.025)
+c&lt;-super.cats(rr,by=length(rr),ncases=765,ncontrols=1274,ncases2=100,ncontrols2=100,
+alpha=0.001,prevalence=0.01);
+
+plot(c,main="power",file=NULL)
+</pre>
+				<h4><span class="mw-headline" id="design_and_MAF">design and MAF</span></h4>
+				<div class="thumb tright">
+					<div class="thumbinner" style="width:302px;"><a href="assets/CatsFig4.png" class="image"><img
+								alt="CatsFig4.png" src="assets/CatsFig4.png" width="300" height="300"
+								class="thumbimage"></a>
+						<div class="thumbcaption">
+							<div class="magnify"><a href="assets/CatsFig4.png" class="internal" title="Enlarge"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<pre>library(CATS)
+rr&lt;-seq(1,2,by=0.05)
+maf&lt;-c(0.05,0.1,0.2,0.5)
+c2&lt;-curve.cats(rr,maf,ncases=600,ncontrols=600,ncases2=600,ncontrols2=600,
+alpha=0.000001,prevalence=0.01);
+
+plot(c2,type="One",main="power2",ylab="Power",xlab="RR",file=NULL,col=1:4)
+lines.cats(c2,type="Replication",lty=3)
+lines.cats(c2,type="Joint",lty=2)
+lines.cats(c2,type="First",lty=4)
+legend("left",c("One stage","Joint","Relication","First Stage"),lty=1:4,bty="n")
+</pre>
+
+				<!-- 
+NewPP limit report
+Cached time: 20190510064321
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.020 seconds
+Real time usage: 0.020 seconds
+Preprocessor visited node count: 91/1000000
+Preprocessor generated node count: 180/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+				<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+				<!-- Saved in parser cache with key software-my_software_wiki_prefix:pcache:idhash:14-0!*!*!!en!5!* and timestamp 20190510064321 and revision id 759
+ -->
+			</div>
+			<div class="printfooter">
+				Retrieved from "<a dir="ltr"
+					href="http://www.popgen.dk/software/index.php?title=CATS&amp;oldid=759">http://www.popgen.dk/software/index.php?title=CATS&amp;oldid=759</a>"
+			</div>
+			<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>
+			<div class="visualClear"></div>
+		</div>
+	</div>
+	<div id="mw-navigation">
+		<h2>Navigation menu</h2>
+
+		<div id="mw-head">
+			<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+				<h3 id="p-personal-label">Personal tools</h3>
+				<ul>
+					<li id="pt-login"><a
+							href="http://www.popgen.dk/software/index.php?title=Special:UserLogin&amp;returnto=CATS"
+							title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log
+							in</a></li>
+				</ul>
+			</div>
+			<div id="left-navigation">
+				<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+					<h3 id="p-namespaces-label">Namespaces</h3>
+					<ul>
+						<li id="ca-nstab-main" class="selected"><span><a
+									href="http://www.popgen.dk/software/index.php/CATS"
+									title="View the content page [c]" accesskey="c">Page</a></span></li>
+						<li id="ca-talk" class="new"><span><a
+									href="http://www.popgen.dk/software/index.php?title=Talk:CATS&amp;action=edit&amp;redlink=1"
+									title="Discussion about the content page [t]" accesskey="t"
+									rel="discussion">Discussion</a></span></li>
+					</ul>
+				</div>
+				<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet"
+					aria-labelledby="p-variants-label">
+					<h3 id="p-variants-label" tabindex="0">
+						<span>Variants</span><a href="http://www.popgen.dk/software/index.php/CATS#" tabindex="-1"></a>
+					</h3>
+
+					<div class="menu">
+						<ul>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div id="right-navigation">
+				<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+					<h3 id="p-views-label">Views</h3>
+					<ul>
+						<li id="ca-view" class="selected"><span><a
+									href="http://www.popgen.dk/software/index.php/CATS">Read</a></span></li>
+						<li id="ca-viewsource"><span><a
+									href="http://www.popgen.dk/software/index.php?title=CATS&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e">View source</a></span></li>
+						<li id="ca-history" class="collapsible"><span><a
+									href="http://www.popgen.dk/software/index.php?title=CATS&amp;action=history"
+									title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+					</ul>
+				</div>
+				<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet"
+					aria-labelledby="p-cactions-label" style="">
+					<h3 id="p-cactions-label" tabindex="0"><span>More</span><a
+							href="http://www.popgen.dk/software/index.php/CATS#" tabindex="-1"></a></h3>
+
+					<div class="menu">
+						<ul>
+						</ul>
+					</div>
+				</div>
+				<div id="p-search" role="search">
+					<h3>
+						<label for="searchInput">Search</label>
+					</h3>
+
+					<form action="http://www.popgen.dk/software/index.php" id="searchform">
+						<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search" title="Search software [f]"
+								accesskey="f" id="searchInput" tabindex="1"><input type="hidden" value="Special:Search"
+								name="title"><input type="submit" name="fulltext" value="Search"
+								title="Search the pages for this text" id="mw-searchButton"
+								class="searchButton mw-fallbackSearchButton"><input type="submit" name="go" value="Go"
+								title="Go to a page with this exact name if it exists" id="searchButton"
+								class="searchButton"> </div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div id="mw-panel">
+			<div id="p-logo" role="banner"><a class="mw-wiki-logo"
+					href="http://www.popgen.dk/software/index.php/Main_Page" title="Visit the main page"></a></div>
+			<div class="portal" role="navigation" id="p-Main" aria-labelledby="p-Main-label">
+				<h3 id="p-Main-label">Main</h3>
+
+				<div class="body">
+					<ul>
+					</ul>
+				</div>
+			</div>
+			<div class="portal" role="navigation" id="p-ANGSD" aria-labelledby="p-ANGSD-label">
+				<h3 id="p-ANGSD-label">ANGSD</h3>
+
+				<div class="body">
+					<ul>
+						<li id="n-Website"><a href="http://popgen.dk/angsd" rel="nofollow">Website</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="portal" role="navigation" id="p-NgsRelate" aria-labelledby="p-NgsRelate-label">
+				<h3 id="p-NgsRelate-label">NgsRelate</h3>
+
+				<div class="body">
+					<ul>
+						<li id="n-Website"><a href="http://www.popgen.dk/software/index.php/NgsRelate"
+								rel="nofollow">Website</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="portal" role="navigation" id="p-PCAngsd" aria-labelledby="p-PCAngsd-label">
+				<h3 id="p-PCAngsd-label">PCAngsd</h3>
+
+				<div class="body">
+					<ul>
+						<li id="n-PCA.2C-selection-and-inbreeding-for-NGS-data"><a
+								href="http://www.popgen.dk/software/index.php/PCAngsd">PCA, selection and inbreeding for
+								NGS data</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="portal" role="navigation" id="p-Relate" aria-labelledby="p-Relate-label">
+				<h3 id="p-Relate-label">Relate</h3>
+
+				<div class="body">
+					<ul>
+						<li id="n-Local-IBD-relatedness"><a href="http://www.popgen.dk/software/index.php/Relate">Local
+								IBD relatedness</a></li>
+						<li id="n-Download"><a
+								href="http://www.popgen.dk/software/index.php/Relate#Download_and_Installation">download</a>
+						</li>
+						<li id="n-Manual"><a href="http://www.popgen.dk/software/index.php/Relate#Manual">Manual</a>
+						</li>
+						<li id="n-citation"><a
+								href="http://www.popgen.dk/software/index.php/Relate#Citation">citation</a></li>
+						<li id="n-Log"><a href="http://www.popgen.dk/software/index.php/Relate#Change_log">Logs</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="portal" role="navigation" id="p-BAMSE" aria-labelledby="p-BAMSE-label">
+				<h3 id="p-BAMSE-label">BAMSE</h3>
+
+				<div class="body">
+					<ul>
+						<li id="n-Bayesian-Association-of-multiple-SNPs"><a
+								href="http://www.popgen.dk/software/index.php/BAMSE">Bayesian Association of multiple
+								SNPs</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="portal" role="navigation" id="p-CATS" aria-labelledby="p-CATS-label">
+				<h3 id="p-CATS-label">CATS</h3>
+
+				<div class="body">
+					<ul>
+						<li id="n-power-for-two-stage-GWAS"><a href="http://www.popgen.dk/software/index.php/CATS">power
+								for two stage GWAS</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="portal" role="navigation" id="p-NGSadmix" aria-labelledby="p-NGSadmix-label">
+				<h3 id="p-NGSadmix-label">NGSadmix</h3>
+
+				<div class="body">
+					<ul>
+						<li id="n-Population-Structure-for-NGS-data"><a
+								href="http://www.popgen.dk/software/index.php/NgsAdmix">Population Structure for NGS
+								data</a></li>
+						<li id="n-Download"><a
+								href="http://www.popgen.dk/software/index.php/NgsAdmix#Installation">download</a></li>
+						<li id="n-Example"><a
+								href="http://www.popgen.dk/software/index.php/NgsAdmix#Run_example">Example</a></li>
+						<li id="n-Input-files"><a
+								href="http://www.popgen.dk/software/index.php/NgsAdmix#Input_Files">Input files</a></li>
+						<li id="n-Citation"><a
+								href="http://www.popgen.dk/software/index.php/NgsAdmix#citation">Citation</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="portal" role="navigation" id="p-asaMap" aria-labelledby="p-asaMap-label">
+				<h3 id="p-asaMap-label">asaMap</h3>
+
+				<div class="body">
+					<ul>
+						<li id="n-Ancestry-specific-association-mapping-in-admixed-populations"><a
+								href="http://www.popgen.dk/software/index.php/AsaMap">Ancestry-specific association
+								mapping in admixed populations</a></li>
+						<li id="n-Download"><a
+								href="http://www.popgen.dk/software/index.php/AsaMap#Download">download</a></li>
+						<li id="n-Example"><a href="http://www.popgen.dk/software/index.php/AsaMap#Example">Example</a>
+						</li>
+						<li id="n-Input-files"><a
+								href="http://www.popgen.dk/software/index.php/AsaMap#Input_Files">Input files</a></li>
+						<li id="n-Citation"><a
+								href="http://www.popgen.dk/software/index.php/AsaMap#Citation">Citation</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="portal" role="navigation" id="p-fastNGSadmix" aria-labelledby="p-fastNGSadmix-label">
+				<h3 id="p-fastNGSadmix-label">fastNGSadmix</h3>
+
+				<div class="body">
+					<ul>
+						<li id="n-admixture-proportions-and-principal-component-analysis-of-a-single-NGS-sample"><a
+								href="http://www.popgen.dk/software/index.php/FastNGSadmix">admixture proportions and
+								principal component analysis of a single NGS sample</a></li>
+						<li id="n-Download"><a
+								href="http://www.popgen.dk/software/index.php/FastNGSadmix#Download">download</a></li>
+						<li id="n-Input-files"><a
+								href="http://www.popgen.dk/software/index.php/FastNGSadmix#Input_Files">Input files</a>
+						</li>
+						<li id="n-Running-fastNGSadmix"><a
+								href="http://www.popgen.dk/software/index.php/FastNGSadmix#Running_fastNGSadmix">Running
+								fastNGSadmix</a></li>
+						<li id="n-PCA"><a href="http://www.popgen.dk/software/index.php/FastNGSadmix#PCA">PCA</a></li>
+						<li id="n-Making-a-reference-panel"><a
+								href="http://www.popgen.dk/software/index.php/FastNGSadmix#Making_a_reference_panel">Making
+								a reference panel</a></li>
+						<li id="n-Human-reference-panels"><a
+								href="http://www.popgen.dk/software/index.php/FastNGSadmix#Human_reference_panels">Human
+								reference panels</a></li>
+						<li id="n-Citation"><a
+								href="http://www.popgen.dk/software/index.php/FastNGSadmix#Citation">Citation</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="portal" role="navigation" id="p-relateAdmix" aria-labelledby="p-relateAdmix-label">
+				<h3 id="p-relateAdmix-label">relateAdmix</h3>
+
+				<div class="body">
+					<ul>
+						<li id="n-Relatedness-estimation-for-admixed-individuals"><a
+								href="http://www.popgen.dk/software/index.php/RelateAdmix">Relatedness estimation for
+								admixed individuals</a></li>
+						<li id="n-Download"><a
+								href="http://www.popgen.dk/software/index.php/RelateAdmix#Installation">download</a>
+						</li>
+						<li id="n-Example"><a
+								href="http://www.popgen.dk/software/index.php/RelateAdmix#Run_example">Example</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="portal" role="navigation" id="p-LDadmix" aria-labelledby="p-LDadmix-label">
+				<h3 id="p-LDadmix-label">LDadmix</h3>
+
+				<div class="body">
+					<ul>
+					</ul>
+				</div>
+			</div>
+			<div class="portal" role="navigation" id="p-R_scripts" aria-labelledby="p-R_scripts-label">
+				<h3 id="p-R_scripts-label">R scripts</h3>
+
+				<div class="body">
+					<ul>
+						<li id="n-various-R-scripts"><a href="http://www.popgen.dk/software/index.php/Rscripts">various
+								R scripts</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="portal" role="navigation" id="p-navigation" aria-labelledby="p-navigation-label">
+				<h3 id="p-navigation-label">Navigation</h3>
+
+				<div class="body">
+					<ul>
+						<li id="n-Software"><a href="http://www.popgen.dk/software/index.php/Main_Page">Software</a>
+						</li>
+						<li id="n-Popgen.dk"><a href="http://popgen.dk/" rel="nofollow">Popgen.dk</a></li>
+						<li id="n-ANGSD"><a href="http://popgen.dk/wiki" rel="nofollow">ANGSD</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="portal" role="navigation" id="p-tb" aria-labelledby="p-tb-label">
+				<h3 id="p-tb-label">Tools</h3>
+
+				<div class="body">
+					<ul>
+						<li id="t-whatlinkshere"><a
+								href="http://www.popgen.dk/software/index.php/Special:WhatLinksHere/CATS"
+								title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a>
+						</li>
+						<li id="t-recentchangeslinked"><a
+								href="http://www.popgen.dk/software/index.php/Special:RecentChangesLinked/CATS"
+								title="Recent changes in pages linked from this page [k]" accesskey="k">Related
+								changes</a></li>
+						<li id="t-specialpages"><a href="http://www.popgen.dk/software/index.php/Special:SpecialPages"
+								title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+						<li id="t-print"><a href="http://www.popgen.dk/software/index.php?title=CATS&amp;printable=yes"
+								rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable
+								version</a></li>
+						<li id="t-permalink"><a href="http://www.popgen.dk/software/index.php?title=CATS&amp;oldid=759"
+								title="Permanent link to this revision of the page">Permanent link</a></li>
+						<li id="t-info"><a href="http://www.popgen.dk/software/index.php?title=CATS&amp;action=info"
+								title="More information about this page">Page information</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="footer" role="contentinfo">
+		<ul id="footer-info">
+			<li id="footer-info-lastmod"> This page was last modified on 4 September 2017, at 09:28.</li>
+			<li id="footer-info-viewcount">This page has been accessed 26,359 times.</li>
+		</ul>
+		<ul id="footer-places">
+			<li id="footer-places-privacy"><a href="http://www.popgen.dk/software/index.php/Software:Privacy_policy"
+					title="Software:Privacy policy">Privacy policy</a></li>
+			<li id="footer-places-about"><a href="http://www.popgen.dk/software/index.php/Software:About"
+					title="Software:About">About software</a></li>
+			<li id="footer-places-disclaimer"><a
+					href="http://www.popgen.dk/software/index.php/Software:General_disclaimer"
+					title="Software:General disclaimer">Disclaimers</a></li>
+		</ul>
+		<div style="clear:both"></div>
+	</div>
+</body>
+
+</html>
