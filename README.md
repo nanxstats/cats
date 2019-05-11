@@ -1,5 +1,7 @@
 # cats
 
+[![Travis build status](https://travis-ci.org/nanxstats/cats.svg?branch=master)](https://travis-ci.org/nanxstats/cats)
+
 `cats` is a fork of the R package `CATS` developed by Anders Albrechtsen <<aalbrechtsen@bio.ku.dk>> for power estimation in two-stage genome-wide association designs.
 
 ## Installation
