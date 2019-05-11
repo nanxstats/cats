@@ -34,8 +34,6 @@ cats(
 ## Which design is better
 
 ```{r}
-library("cats")
-
 rr <- seq(1, 2, by = 0.05)
 maf <- c(0.05, 0.1, 0.2, 0.5)
 c2 <- curve.cats(rr, maf,
@@ -52,8 +50,6 @@ legend("left", c("One stage", "Joint", "Relication", "First Stage"), lty = 1:4, 
 ## Number of SNPs for replication
 
 ```{r}
-library("cats")
-
 power.J96 <- c()
 power.J1536 <- c()
 RR <- seq(1.1, 1.5, by = 0.025)
@@ -89,8 +85,6 @@ legend("bottomright", c(paste("MAF=", c(maf), ", rep=1536"), paste("MAF=", c(maf
 ## Heatmap of power
 
 ```{r}
-library("cats")
-
 rr <- seq(1, 2, by = 0.025)
 c <- super.cats(rr,
   by = length(rr), ncases = 765, ncontrols = 1274, ncases2 = 100, ncontrols2 = 100,
@@ -102,8 +96,6 @@ plot(c, main = "power", file = NULL)
 ## Design and MAF
 
 ```{r}
-library("cats")
-
 rr <- seq(1, 2, by = 0.05)
 maf <- c(0.05, 0.1, 0.2, 0.5)
 c2 <- curve.cats(rr, maf,

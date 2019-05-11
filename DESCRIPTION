@@ -7,8 +7,8 @@ Description: Joint power analysis for two-stage designs for SNP data.
 Version: 1.0.2
 Date: 2019-05-10
 Authors@R: c(
-    person("Anders", "Albrechtsen", email = "aalbrechtsen@bio.ku.dk", role = c("aut", "cre")),
-    person("Nan", "Xiao", email = "me@nanx.me", role = c("ctb")))
+    person("Anders", "Albrechtsen", email = "aalbrechtsen@bio.ku.dk", role = c("aut")),
+    person("Nan", "Xiao", email = "me@nanx.me", role = c("cre", "ctb")))
 Maintainer: Nan Xiao <me@nanx.me>
 URL: https://nanx.me/cats/, https://github.com/nanxstats/cats
 BugReports: https://github.com/nanxstats/cats/issues
