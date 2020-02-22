@@ -4,9 +4,20 @@
 \alias{super.cats}
 \title{Generate supercats}
 \usage{
-super.cats(RR, MAFmax = 0.5, MAFmin = 0.005, by = 50, rep = 1536,
-  SNPs = 1e+06, ncases, ncontrols, ncases2, ncontrols2,
-  alpha = 0.05/SNPs, ...)
+super.cats(
+  RR,
+  MAFmax = 0.5,
+  MAFmin = 0.005,
+  by = 50,
+  rep = 1536,
+  SNPs = 1e+06,
+  ncases,
+  ncontrols,
+  ncases2,
+  ncontrols2,
+  alpha = 0.05/SNPs,
+  ...
+)
 }
 \arguments{
 \item{RR}{description}

@@ -5,11 +5,25 @@
 \title{Power calculation for a joint analysis of a two-stage case control design
 for SNP data}
 \usage{
-cats(freq = 0.5, freq2 = -1, ncases = 500, ncontrols = 500,
-  ncases2 = 500, ncontrols2 = 500, risk = 1.5, risk2 = -1,
-  pisamples = -1, prevalence = 0.1, prevalence2 = -1, additive = 0,
-  recessive = 0, dominant = 0, multiplicative = 1, alpha = 1e-07,
-  pimarkers = 0.00316)
+cats(
+  freq = 0.5,
+  freq2 = -1,
+  ncases = 500,
+  ncontrols = 500,
+  ncases2 = 500,
+  ncontrols2 = 500,
+  risk = 1.5,
+  risk2 = -1,
+  pisamples = -1,
+  prevalence = 0.1,
+  prevalence2 = -1,
+  additive = 0,
+  recessive = 0,
+  dominant = 0,
+  multiplicative = 1,
+  alpha = 1e-07,
+  pimarkers = 0.00316
+)
 }
 \arguments{
 \item{freq}{numeric. The minor allele frequency (MAF) in the first stage}

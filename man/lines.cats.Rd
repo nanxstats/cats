@@ -4,8 +4,7 @@
 \alias{lines.cats}
 \title{Line plots for cats object}
 \usage{
-\method{lines}{cats}(x, type = "Replication", col = NULL, lty = 2,
-  ...)
+\method{lines}{cats}(x, type = "Replication", col = NULL, lty = 2, ...)
 }
 \arguments{
 \item{x}{description}

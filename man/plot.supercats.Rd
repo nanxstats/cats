@@ -4,9 +4,15 @@
 \alias{plot.supercats}
 \title{Plot supercats}
 \usage{
-\method{plot}{supercats}(x, type = "Joint", file = "power.pdf",
-  col = NULL, main = paste("POWER N=", x$ncases, ":", x$ncontrols, ",",
-  x$ncases2, ":", x$ncontrols2, " rep=", x$rep, sep = ""), ...)
+\method{plot}{supercats}(
+  x,
+  type = "Joint",
+  file = "power.pdf",
+  col = NULL,
+  main = paste("POWER N=", x$ncases, ":", x$ncontrols, ",", x$ncases2, ":",
+    x$ncontrols2, " rep=", x$rep, sep = ""),
+  ...
+)
 }
 \arguments{
 \item{x}{description}

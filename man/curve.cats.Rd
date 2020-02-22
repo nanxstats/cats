@@ -4,8 +4,18 @@
 \alias{curve.cats}
 \title{Curves plot for cats object}
 \usage{
-curve.cats(RR, MAF, rep = 1536, SNPs = 1e+06, ncases, ncontrols,
-  ncases2, ncontrols2, alpha = 0.05/SNPs, ...)
+curve.cats(
+  RR,
+  MAF,
+  rep = 1536,
+  SNPs = 1e+06,
+  ncases,
+  ncontrols,
+  ncases2,
+  ncontrols2,
+  alpha = 0.05/SNPs,
+  ...
+)
 }
 \arguments{
 \item{RR}{description}
