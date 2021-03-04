@@ -3,5 +3,3 @@
 ^bin$
 ^pkgdown$
 ^docs$
-^\.travis\.yml$
-^appveyor\.yml$
