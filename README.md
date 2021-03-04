@@ -1,5 +1,9 @@
 # cats
 
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/nanxstats/cats/workflows/R-CMD-check/badge.svg)](https://github.com/nanxstats/cats/actions)
+<!-- badges: end -->
+
 `cats` is a fork of the R package `CATS` developed by Anders Albrechtsen <<aalbrechtsen@bio.ku.dk>> for power estimation in two-stage genome-wide association designs. See [the vignette](https://nanx.me/cats/articles/cats.html) for code examples.
 
 ## Installation
