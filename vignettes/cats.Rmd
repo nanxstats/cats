@@ -1,22 +1,31 @@
 ---
 title: "Joint Power Analysis for Non-Symmetric Two-Stage Case-Control Designs"
-date: "`r Sys.Date()`"
 output:
   rmarkdown::html_vignette:
     toc: true
-    number_sections: true
+    number_sections: false
 vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteIndexEntry{Joint Power Analysis for Non-Symmetric Two-Stage Case-Control Designs}
 ---
 
-```{r, echo=FALSE}
-knitr::opts_chunk$set(fig.width = 7, fig.height = 7)
+```{r, include=FALSE}
+knitr::opts_chunk$set(
+  comment = "#>",
+  collapse = TRUE
+)
 ```
 
-Source: http://www.popgen.dk/software/index.php/CATS
+```{r, include=FALSE}
+knitr::opts_chunk$set(
+  fig.width = 7,
+  fig.height = 7
+)
+```
 
-# A simple run
+Source: <http://www.popgen.dk/software/index.php/CATS>
+
+## A simple run
 
 ```{r}
 library("cats")
@@ -29,9 +38,9 @@ cats(
 )
 ```
 
-# Plot examples
+## Plot examples
 
-## Which design is better
+### Which design is better
 
 ```{r}
 rr <- seq(1, 2, by = 0.05)
@@ -47,7 +56,7 @@ lines.cats(c2, type = "First", lty = 4)
 legend("left", c("One stage", "Joint", "Relication", "First Stage"), lty = 1:4, bty = "n")
 ```
 
-## Number of SNPs for replication
+### Number of SNPs for replication
 
 ```{r}
 power.J96 <- c()
@@ -82,7 +91,7 @@ for (tal2 in 1:length(maf)) lines(RR, power.J96[, tal2], lwd = 2, col = col[tal2
 legend("bottomright", c(paste("MAF=", c(maf), ", rep=1536"), paste("MAF=", c(maf), ", rep=96")), col = col, lwd = 2, bty = "n", lty = c(rep(1, length(maf)), rep(2, length(maf))))
 ```
 
-## Heatmap of power
+### Heatmap of power
 
 ```{r}
 rr <- seq(1, 2, by = 0.025)
@@ -93,7 +102,7 @@ c <- super.cats(rr,
 plot(c, main = "power", file = NULL)
 ```
 
-## Design and MAF
+### Design and MAF
 
 ```{r}
 rr <- seq(1, 2, by = 0.05)

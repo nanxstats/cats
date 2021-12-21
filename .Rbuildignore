@@ -1,6 +1,7 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^bin$
+^_pkgdown\.yml$
 ^pkgdown$
 ^docs$
 ^\.github$
